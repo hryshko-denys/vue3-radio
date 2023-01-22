@@ -5,4 +5,4 @@ export const REQUEST_DELAY_TIME = 2000;
 export const ACTIVE_SONG_STATUS = "playing";
 
 export const DEFAULT_IMG_URL =
-  "https://bitsofco.de/content/images/2016/02/Screen-Shot-2016-02-27-at-12-42-08.png";
+  "https://images.pexels.com/photos/1021876/pexels-photo-1021876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";

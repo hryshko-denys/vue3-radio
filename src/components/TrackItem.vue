@@ -19,6 +19,7 @@ const {
   image,
   songProgress,
   adaptedTimeInSeconds,
+  setAltImg,
 } = useTrack(song);
 </script>
 
@@ -29,6 +30,7 @@ const {
     <div class="track__image-wrapper">
       <img
         :src="image"
+        @error="setAltImg"
         alt="Song image"
         :class="['track__image', { 'track__image--active': isActive }]"
       />
@@ -87,6 +89,9 @@ const {
   max-height: 250px;
 
   background-size: cover;
+}
+.track .track__album {
+  text-align: center;
 }
 
 .track .track__image--active {

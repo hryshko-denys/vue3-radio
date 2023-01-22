@@ -33,8 +33,8 @@ onMounted(async () => {
     <Loader />
   </div>
   <div v-else class="content">
-    <ActiveSong :song="playingSong" />
-    <HistoryList :songs="historyList" />
+    <ActiveSong v-if="playingSong" :song="playingSong" />
+    <HistoryList v-if="historyList" :songs="historyList" />
   </div>
 </template>
 

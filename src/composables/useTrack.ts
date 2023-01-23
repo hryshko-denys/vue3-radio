@@ -73,8 +73,8 @@ export function useTrack(song: Ref<TrackItemWithAlbumInt>) {
 
   const image = computed(() => song.value.imageUrl || DEFAULT_IMG_URL);
 
-  const setAltImg = (event: any) => {
-    event.target.src = DEFAULT_IMG_URL;
+  const setAltImg = (event: HTMLImageElement) => {
+    event.src = DEFAULT_IMG_URL;
   };
 
   return {

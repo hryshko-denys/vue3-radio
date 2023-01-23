@@ -16,7 +16,9 @@ export const findSongAlbum = async (songInfo: TrackItemInt) => {
   const songResponse = await fetch(`/getSongAlbum${searchParams}`);
   const songData = await songResponse.json();
 
-  if (songData.results?.length > 0) {
+  const haveMatches = songData.results?.length > 0;
+
+  if (haveMatches) {
     const correctSongData = songData.results.find(
       (songData: SongInfoInt) => songData.artistName === songInfo.artist
     );

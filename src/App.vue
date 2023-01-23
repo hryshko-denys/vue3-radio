@@ -8,27 +8,15 @@ import Loader from "./components/Loader.vue";
 import showError from "./utils/errorHandling";
 
 import { useFetchRadioList } from "./composables/useFetchRadioList";
-import {REQUEST_DELAY_TIME} from "./utils/constants";
 
-const { playingSong, historyList, updateSongs, isFirstListLoaded } =
+const { playingSong, historyList, requestSongs, isFirstListLoaded } =
   useFetchRadioList();
 
 onMounted(async () => {
   try {
-    function request() {
-      const delay = new Promise((resolve) =>
-          setTimeout(resolve, REQUEST_DELAY_TIME)
-      );
-      Promise.all([updateSongs(), delay]).then(() => {
-
-        request()
-      });
-    }
-
-    request();
+    requestSongs();
   } catch (error) {
     console.error(error);
-
     showError();
   }
 });

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { toRef } from "vue";
 
-import { TrackItemWithAlbumInt } from "../types/TrackTypes";
 import Progress from "./Progress.vue";
+
 import { useTrack } from "../composables/useTrack";
+import { TrackItemWithAlbumInt } from "../types/TrackTypes";
 
 interface TrackItemProp {
   song: TrackItemWithAlbumInt;

@@ -2,7 +2,6 @@
 import { toRef } from "vue";
 
 import TrackItem from "./TrackItem.vue";
-import SectionTitle from "./SectionTitle.vue";
 
 import { TrackItemWithAlbumInt } from "../types/TrackTypes";
 
@@ -16,7 +15,7 @@ const song = toRef(props, "song");
 
 <template>
   <section class="active-song">
-    <SectionTitle>Playing song:</SectionTitle>
+    <h2 class="section-title">Playing song:</h2>
 
     <TrackItem v-if="song" :song="song" is-active />
 

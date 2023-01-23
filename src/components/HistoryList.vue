@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import TrackItem from "./TrackItem.vue";
-import SectionTitle from "./SectionTitle.vue";
 
 import { TrackItemWithAlbumInt } from "../types/TrackTypes";
 
@@ -13,7 +12,7 @@ const props = defineProps<HistoryListInt>();
 
 <template>
   <section>
-    <SectionTitle>History:</SectionTitle>
+    <h2 class="section-title">History:</h2>
 
     <ul class="songs-list">
       <li v-for="song in props.songs" :key="song.time">

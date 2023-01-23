@@ -1,7 +1,7 @@
 import { SongInfoInt, TrackItemInt } from "../types/TrackTypes";
 
 export const fetchSongs = async () => {
-  const response = await fetch(import.meta.env.VITE_RADIO_SONGS_API);
+  const response = await fetch("/getRadioSongs");
   const responseData = await response.json();
 
   return responseData?.nowplaying;
@@ -12,9 +12,8 @@ export const findSongAlbum = async (songInfo: TrackItemInt) => {
     .replaceAll(" ", "+")
     .replaceAll(/[^a-zA-Z0-9]/g, "");
   const searchParams = titleParams;
-  const songResponse = await fetch(
-    `${import.meta.env.VITE_APPLE_SONGS_API}${searchParams}`
-  );
+
+  const songResponse = await fetch(`/getSongAlbum${searchParams}`);
   const songData = await songResponse.json();
 
   if (songData.results?.length > 0) {
